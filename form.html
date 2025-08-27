@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form practice</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .form-container .form-signin,
+    .form-container .form-signup {
+      display: flex;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <div class="form-signin">
+      <form action="post">
+        <label for="Username1">Enter your username</label>
+        <input type="text" name="username" id="Username1" placeholder="Username"><br>
+        <label for="Password">Enter your password</label>
+        <input type="password" name="password" id="loginPassword" placeholder="Password"><br>
+        <input type="checkbox" id="togglePassword" onclick="toggle()"><br>
+        <button type="button" onclick="submitFormSignIn()">Submit</button>
+      </form>
+    </div>
+    <div class="form-signup">
+      <form action="post">
+        <label for="FullName">Enter your full name</label>
+        <input type="text" name="fullname" id="FullName" placeholder="Full Name"><br>
+        <label for="username">Enter your username</label>
+        <input type="text" name="username" id="Username" placeholder="username"><br>
+        <label for="Password">Enter your password</label>
+        <input type="password" name="password" id="signupPassword" placeholder="Password"><br>
+        <label for="ConfirmPassword">Confirm your password</label>
+        <input type="password" name="confirmpassword" id="ConfirmPassword" placeholder="Confirm Password"><br>
+        <button type="button" onclick="submitFormSignUp()">Submit</button>
+      </form>
+    </div>
+  </div>
+</body>
+<script src="dom.js"></script>
+<script>
+  function  toggle(){
+    const passwordFields = document.querySelectorAll('input[type="password"], input[type="text"]');
+    passwordFields.forEach(field =>{
+      if(field.type === "password"){
+        field.type = "text";
+      } else {
+        field.type = "password";
+      }
+    })
+    }
+  
+</script>
+</html>
